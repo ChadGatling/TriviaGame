@@ -17,24 +17,34 @@ $(document).ready(function() {
 
             $("body").html(startScreen);
             $("html").click(function() {
-                mode = "ask";
-                loop();
+            	if (mode === "start") {
+	                mode = "ask";
+	                loop();
+	                $("html").off("click");
+	            }
             })
         } else if (mode === "ask") { // Question-------------------------------------------------------------
-            console.log('mode === ' + mode)
             var randomOrder = 0;
 
-            var question = [
+            var question = [ // list of questions
                 "When found on a beer bottle, what does the acronym IPA stand for?",
                 "To be legally sold as bourbon, a whiskey's mash must contain at least 51% of what grain?",
             ];
 
-            var answer = [
+            var answer = [ // list of answers to go with questions
                 ["India Pale Ale", "Irish Person Alcohol", "International Perscription Agitator", "Is Proper Alcohol"],
                 ["Corn", "Wheat", "Barly", "Sesame"]
             ];
 
-            var questionNumber = Math.floor(Math.random() * question.length);
+            var answerRandomize = [0,1,2,3];
+
+            answerRandomize = answerRandomize.sort(function(a, b){ // randomize the order of the answerRandomize variable
+            	return 0.5 - Math.random();
+            });
+
+            console.log(answerRandomize.toString());
+
+            var questionNumber = Math.floor(Math.random() * question.length); // pick a random question
 
             $("body").html(
                 '<h1>Boozie Trivia</h1>' +
@@ -45,14 +55,20 @@ $(document).ready(function() {
             for (var i = 0; i < 4; i++) {
             	$("body").append(
             	'<div>' +
-                '<button type="button">' + answer[questionNumber][i] + '</button>' +
+                '<button type="button">' + answer[questionNumber][answerRandomize[i]] + '</button>' +
                 '</div>'
             	)
+            }
 
         	$("button").click(function() {
-        		console.log(this);
-        	});
-            }
+        		// console.log($(this).text());
+        		if ($(this).text() === answer[questionNumber][0] ) {
+        			console.log("Correct");
+        		}
+        		else {
+        			console.log("incorrect");
+        		}
+            });
             // loop();
         }
 
