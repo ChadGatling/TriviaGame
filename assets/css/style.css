@@ -2,5 +2,8 @@ body {
 	/*background-color: black;*/
 	/*color: green;*/
 	/*font-family: monospace, sans-serif;*/
+	width: 50%;
 	text-align: center;
+	margin:auto;
+	margin-top: 10%;
 }
