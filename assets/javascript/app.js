@@ -39,7 +39,8 @@ $(document).ready(function() {
         console.log(questionNumber + ' of ' + (question.length - 1));
         if (mode === "start") { // Start Screen-------------------------------------------------------------------
             getName();
-
+            
+            playerName = playerName.trim();
             playerName = playerName[0].toUpperCase() + playerName.slice(1);
 
             if (playerName === "Kaitie") {
@@ -88,6 +89,7 @@ $(document).ready(function() {
             }
 
             playerName = playerName[0].toUpperCase() + playerName.slice(1);
+            console.log(playerName);
 
             function normalStart() {
                 var startScreen =
@@ -237,14 +239,11 @@ $(document).ready(function() {
 
         function getName() {
             playerName = prompt("Please pick a name.");
-            // playerName = playerName[0].toUpperCase() + playerName.slice(1);
-            if (playerName === "") {
+            if (playerName === "" || playerName === null) {
                 playerName = prompt("Sorry you need to pick a name.");
-                // playerName = playerName[0].toUpperCase() + playerName.slice(1);
-                if (playerName === "") {
+                if (playerName === "" || playerName === null) {
                     playerName = prompt("Dude! pick a name!")
-                    // playerName = playerName[0].toUpperCase() + playerName.slice(1);
-                    if (playerName === "") {
+                    if (playerName === "" || playerName === null) {
                         alert("Alright, fuck it your name is Potato. Nice to meet you Potato... dick.")
                         playerName = "Potato";
                     }
