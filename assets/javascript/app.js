@@ -42,13 +42,13 @@ $(document).ready(function() {
 
                     playerName = playerName[0].toUpperCase() + playerName.slice(1);
 
-                    if (playerName === "Kaitie") {
+                    if (playerName === "Rachel") {
                         $("body").html(
                             '<p>Easter Egg Discovered!</p>' +
-                            '<h1>Hey baby</h1>' +
+                            '<h1>Hi Rachi :)</h1>' +
                             '<h1>Your beautiful</h1>' +
                             '<h1>and I love you</h1>' +
-                            '<p>make me a snadwich :P</p>'
+                            "<p>let's get drunk :P</p>"
                         );
                         setTimeout(normalStart, 3000);
                     } else if (playerName === "Lisa") {
