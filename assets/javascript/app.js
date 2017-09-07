@@ -46,7 +46,7 @@ $(document).ready(function() {
                         $("body").html(
                             '<p>Easter Egg Discovered!</p>' +
                             '<h1>Hi Rachi :)</h1>' +
-                            '<h1>Your beautiful</h1>' +
+                            "<h1>You're beautiful</h1>" +
                             '<h1>and I love you</h1>' +
                             "<p>let's get drunk :P</p>"
                         );
